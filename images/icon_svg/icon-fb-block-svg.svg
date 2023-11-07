@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+	<title>icon-fb-svg</title>
+	<defs>
+		<image  width="10" height="22" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAWBAMAAAALCBBuAAAAAXNSR0IB2cksfwAAACRQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAplgCRwAAAAx0Uk5TAEBsj23/JWbcsJJxDoySGAAAADpJREFUeJxjYGAQMjZmYGAJDQ1lYEgFk6Vg0jTUgAFECsBIY9NQoEqgXGgEmIwEk1EoakgmNxsLMAAAdHATZhXPxBYAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Layer 1" href="#img1" x="15" y="9" />
+</svg>
