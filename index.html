@@ -397,22 +397,17 @@
         </div>
     </div> -->
     <!-- Slider main container -->
-    <div class="swiper" id="products" data-aos="fade-up">
+    <div class="swiper" id="products" data-aos="fade-up" data-aos-delay="250">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper" id="products_container">
 
-            <!-- <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div> -->
+            <div class="swiper-slide">
+            </div>
+
 
         </div>
-        <!-- If we need pagination -->
+        <!-- pagination -->
         <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
 
 
     </div>
@@ -2630,10 +2625,13 @@
         <div class="modal_container ">
             <span class="close">&times;</span>
             <div class="modal_content">
-                <div class="modal_title">
-                    <img src="./images/img_hello/img_hello@2x.png" />
+                <div class="modal_textWrapper ">
+                    <div class="modal_text">下載<span>APP</span>看更多</div>
+                    <div class="modal_text">快來<span>厝邊</span>當鄰居！</div>
                 </div>
-                <!-- <div class="modal_text">官方APP 立即下載</div> -->
+                <!-- <div class="modal_title">
+                    <img src="./images/img_hello/img_hello@2x.png" />
+                </div> -->
                 <div class="modal_link">
                     <a id="androidLink" href="https://supr.link/gVTNl">
                         <img src="./images/btn_dw_an/btn_dw_an@3x.png" />
@@ -2796,29 +2794,43 @@
                 str += `
                 <div class="swiper-slide">
                     <div class="products_card">
-                <div class="products_cardImg">
-                    <img src=${item.Image
+                        <div class="products_cardImg">
+                            <img src=${item.Image
                     } />
+                        </div>
+                        <div class="products_Info">
+                            <div class="products_Name">
+                                <div>${item.Name}</div>
+                            </div>
+                            <div class="products_Price">
+                                <div>$ ${item.Price}</div>
+                            </div>
+                        
+                            <div class="products_City">
+                                <div>${item.City}</div>
+                                <div>${item.District}</div>
+                                <div>${item.Road}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="products_Info">
-                    <div class="products_Name">
-                        <div>${item.Name}</div>
-                    </div>
-                    <div class="products_Price">
-                        <div>$ ${item.Price}</div>
-                    </div>
-                   
-                    <div class="products_City">
-                        <div>${item.City}</div>
-                        <div>${item.District}</div>
-                        <div>${item.Road}</div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        
             `
             })
+
+            str += ` <div class="swiper-slide">
+                  
+                <div class="products_ReadMoreButtonWrapper">
+                    <div id="products_ReadMoreContainer">
+                        <button class="products_ReadMore">
+                        <img src="images/icon_svg/icon-arrow.svg" />
+                        </button>
+                    <div class="products_ReadMoreText">
+                        查看更多
+                    </div>
+                        </div>
+                  
+                </.div>
+                </.div>`
 
             productEl.innerHTML = str
 
@@ -2864,19 +2876,30 @@
             var cards = document.getElementsByClassName("products_card");
 
 
+
             const iOS = document.getElementById('iOSLink')
             const Android = document.getElementById('androidLink')
 
             const handleOpen = () => {
-                console.log('2222')
                 modal.style.display = "flex";
                 const userAgent = handleChekcUserAgent()
                 if (userAgent === 'iOS') {
                     Android.style.display = 'none'
+                } else if (userAgent === 'Android') {
+                    iOS.style.display = 'none'
+                } else {
+                    Android.style.display = 'flex'
+                    iOS.style.display = 'flex'
+
+                    return
                 }
                 console.log(userAgent)
 
             }
+
+            const readMoreButton = document.getElementById('products_ReadMoreContainer')
+            console.log(readMoreButton.addEventListener('click', handleOpen))
+
 
             Array.from(cards).forEach((card) => card.addEventListener('click', handleOpen));
             const span = document.getElementsByClassName("close")[0];
