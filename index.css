@@ -2433,6 +2433,7 @@ header{
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .products_ReadMoreText {
@@ -2450,6 +2451,7 @@ header{
   align-items: center;
   justify-content: center;
   min-height: 450px;
+  width: 100%;
  
 }
 
