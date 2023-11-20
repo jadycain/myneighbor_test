@@ -302,7 +302,7 @@ header{
   }
   .banner_title {
     position: absolute;
-    width: 84vw;
+    width: 85vw;
     left: 50%;
     top: 10%;
     max-width: 330px;
@@ -1110,7 +1110,7 @@ header{
   .intro {
     margin: 0 auto;
     justify-content: space-between;
-    padding-top: 12vw;
+    /* padding-top: 12vw; */
   }
   .intro ul {
     margin: 0 auto;
@@ -1912,11 +1912,11 @@ header{
   }
   .intro {
     margin: 0 auto;
-    width: 60vw;
+    width: 70vw;
     height: 300px;
     display: flex;
     justify-content: space-between;
-    padding: 200px 0;
+    padding: 100px 0;
     /* padding-top: 167px; */
     /* margin: 200px auto;
     margin-bottom: 300px;
@@ -2510,10 +2510,6 @@ header{
     padding-bottom: 50px;
   }
   
-
-  /* .products_Info {
-   min-height: 150px;
-  } */
 }
 
 
