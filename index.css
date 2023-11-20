@@ -2765,6 +2765,10 @@ header{
   .company_img {
     width: 90%;
   }
+
+  .companyAndCommunity_tab {
+    width: 90%;
+   }
 }
 
 @media (max-width: 430px)  {
@@ -2795,8 +2799,10 @@ header{
    }
 
    .companyAndCommunity_tab {
-    width: 80%;
+    width: 100%;
    }
+
+  
 
   
 }
