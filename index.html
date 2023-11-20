@@ -396,6 +396,9 @@
             </div>
         </div>
     </div> -->
+
+
+
     <!-- Slider main container -->
     <div class="swiper" id="products" data-aos="fade-up" data-aos-delay="250">
         <!-- Additional required wrapper -->
@@ -403,14 +406,94 @@
 
             <div class="swiper-slide">
             </div>
-
-
         </div>
         <!-- pagination -->
         <div class="swiper-pagination"></div>
-
-
     </div>
+
+    <div id="companyAndCommunity" data-aos="fade-up" data-aos-delay="550">
+        <div class="companyAndCommunity_tab">
+            <div class="tab tab_active" data-tab="company">
+                企業參與
+            </div>
+            <div class="tab" data-tab="community">
+                社區共好
+            </div>
+        </div>
+        <!-- 企業參與 -->
+        <section id="company">
+            <div class="company_contentWrapper">
+                <div class="company_img">
+                    <a href="https://forms.gle/DqaAVAPC9eDXWtEH8" target="_blank" rel="noopener noreferrer">
+                        <img src="./images/company.jpg" alt="企業參與">
+                    </a>
+                </div>
+                <div class="company_content">
+                    <div class="company_titleWrapper">
+                        <h2 class="company_title">協助您建立
+                            <span>綠色企業</span>
+                        </h2>
+                        <h2 class="company_title">厝邊推動企業專屬惜物圈</h2>
+                    </div>
+                    <div class="company_contentTitle">【使用企業專屬惜物圈的好處】</div>
+                    <ul>
+                        <li>
+                            輕鬆與群組做二手交流: 促進組織內交流，讓大家的關係更緊密
+                        </li>
+                        <li>
+                            環保不只是淨灘淨山的一日活動，而是嵌入企業日常DNA中
+                        </li>
+                        <li>
+                            不需要花時間人力籌劃一日市集，數位化的二手交流，突破時間空間限制
+                        </li>
+                        <li>
+                            雖然屬於員工自發性參與活動，但可以量化減碳成效
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 社區共好 -->
+        <section id="community">
+            <div class="company_contentWrapper">
+                <div class="company_img">
+                    <a href="https://forms.gle/4fmZSmDcjm3tkYQY9" target="_blank" rel="noopener noreferrer">
+                        <img src="./images/community.jpg" alt="社區共好">
+                    </a>
+                </div>
+                <div class="company_content">
+                    <div class="company_titleWrapper">
+                        <h2 class="company_title">
+                            厝邊的焦點位置！
+                        </h2>
+                        <h2 class="company_title">您的店鋪直接宣傳給在地居民</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            最顯眼：一進來厝邊APP就能看到
+                        </li>
+                        <li>
+                            最精準：將您的商家直接溝通給附近的鄰里居民
+                        </li>
+                        <li>
+                            最方便：只需提供圖片和一小段敘述即可
+                        </li>
+                        <li>
+                            最有效：可以連結到您的網頁
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
     <div class="intro">
         <div id="Intro_int"></div>
         <ul data-aos="fade-up" style="width: 256px; height: 286px;">
@@ -2934,6 +3017,34 @@
         };
         gettProcutReadTop()
     });
+
+    const tabEl = document.querySelectorAll('.tab')
+    const communityEl = document.getElementById('community')
+    const companyEl = document.getElementById('company')
+
+    const handleTab = (e, index) => {
+        // 點擊的tab 顯示
+        tabEl.forEach((data, i) => {
+            if (i === index) {
+                data.classList.add('tab_active')
+                if (e.target.dataset.tab === 'company') {
+                    companyEl.style.display = 'flex'
+                    communityEl.style.display = 'none'
+                } else {
+                    companyEl.style.display = 'none'
+                    communityEl.style.display = 'flex'
+                }
+            } else {
+                data.classList.remove('tab_active')
+            }
+        })
+
+        console.log(e.target.dataset.tab)
+        console.log(index)
+
+    }
+    tabEl.forEach((tab, index) => tab.addEventListener('click', (e) => handleTab(e, index)))
+    // console.log(tabEl)
 
 
 </script>
