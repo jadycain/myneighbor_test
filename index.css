@@ -1916,10 +1916,11 @@ header{
     height: 300px;
     display: flex;
     justify-content: space-between;
+    padding: 200px 0;
     /* padding-top: 167px; */
-    margin: 200px auto;
+    /* margin: 200px auto;
     margin-bottom: 300px;
-    min-width: 1032px;
+    min-width: 1032px; */
   }
   .line {
     width: 60px;
@@ -2329,14 +2330,26 @@ header{
 }
 
 
-
-
 #products {
+  padding: 100px 0;
+}
+
+
+#products_wrapper {
   display: flex;
   width: 75vw;
   height: 100%;
   position: relative;
-  padding: 50px 0 100px 0;
+  padding-bottom: 100px;
+
+}
+
+.products_title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700; 
+  font-family: 'Noto Sans JP';
+  padding-bottom: 100px;
 }
 
 .products_card {
@@ -2478,7 +2491,7 @@ header{
 
 
 @media (max-width: 1200px)  {
-  #products {
+  .products_wrapper {
     width: 85vw;
   }
 
@@ -2486,6 +2499,23 @@ header{
    min-height: 150px;
   } */
 }
+
+@media (max-width: 430px)  {
+  #products{
+    padding: 50px 0;
+  }
+
+  .products_title {
+   
+    padding-bottom: 50px;
+  }
+  
+
+  /* .products_Info {
+   min-height: 150px;
+  } */
+}
+
 
 
 .modal {
@@ -2599,7 +2629,7 @@ header{
 #companyAndCommunity {
   width: 65vw;
   height: 100%;
-  padding: 50px 0 100px 0;
+  padding: 100px 0;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -2748,6 +2778,7 @@ header{
 @media (max-width: 1200px)  {
   #companyAndCommunity {
      width: 85vw;
+     padding: 50px 0 100px 0;
    }
 
 }
